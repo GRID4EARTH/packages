@@ -62,5 +62,6 @@ jobs:
       - name: edit release
         env:
           GITHUB_TAG: ${{ github.ref_name }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload $GITHUB_TAG artifacts/*
