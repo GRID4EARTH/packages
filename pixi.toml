@@ -7,18 +7,25 @@ version = "0.1.0"
 
 [dependencies]
 python = "3.13.*"
-healpix-geo = ">=0.1.2, <0.2"
+healpix-geo = ">=0.1.2"
 
 [pypi-dependencies]
-healpix-plot = ">=2026.5.1, <2027"
-healpix-resample = ">=2026.5.1, <2027"
-healpix-analyse = ">=2026.5.1, <2027"
+healpix-plot = ">=2026.5.1"
+healpix-resample = ">=2026.5.1"
+healpix-analyse = ">=2026.5.1"
 
 [feature.export.dependencies]
-jq = "*"
+rich-click = ">=1.9.7,<2"
 
-[feature.export.tasks]
-export-requirements = { cmd = 'pixi ls -x -e default --frozen --json | jq -r ".[] | \"\\(.name)==\\(.version)\"" | grep -v python', default-environment = "export", cwd = "." }
+[feature.export.tasks.export-requirements]
+cmd = 'python export-environment.py requirements'
+default-environment = "export"
+cwd = "."
+
+[feature.export.tasks.conda-environment]
+cmd = 'python export-environment.py conda-environment'
+default-environment = "export"
+cwd = "."
 
 [environments]
 export = { features = ["export"], no-default-feature = true }
