@@ -38,3 +38,8 @@ hooks = [
   { id = "taplo-format", args = ["--option", "array_auto_collapse=false"] },
   { id = "taplo-lint", args = ["--no-schema"] },
 ]
+
+[[repos]]
+repo = "https://github.com/zizmorcore/zizmor-pre-commit"
+rev = "v1.24.1"
+hooks = [{ id = "zizmor", args = ["--offline"] }]
