@@ -17,3 +17,26 @@ Or, with conda:
 wget -q https://github.com/GRID4EARTH/packages/releases/download/v2026.05.4/env.yml
 conda env update -f env.yml -n <env>
 ```
+
+## How to update
+
+To update the registry, run `pixi update` in a new branch:
+
+```sh
+git pull
+git switch -c bump
+pixi update
+git add pixi.lock
+git commit -m "bump grid4earth packages"
+git push origin bump
+```
+
+Then create a pull request and merge it after CI passes.
+
+After that, all that is necessary is create a release using github's web interface or the CLI:
+
+```sh
+gh release create v<version> -n "Release v<version>"
+```
+
+The CI will then add the necessary release artifacts.
