@@ -44,6 +44,8 @@ jobs:
             requirements.txt
 
   extend-release:
+    needs: build
+
     name: Upload release artifacts
     if: github.event_name == 'release'
     runs-on: ubuntu-latest
