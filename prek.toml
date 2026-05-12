@@ -42,4 +42,10 @@ hooks = [
 [[repos]]
 repo = "https://github.com/zizmorcore/zizmor-pre-commit"
 rev = "v1.24.1"
-hooks = [{ id = "zizmor", args = ["--offline"] }]
+hooks = [
+  { id = "zizmor", args = [
+    "--offline",
+    "--persona=auditor",
+    "--fix=all",
+  ] },
+]
