@@ -17,7 +17,7 @@ healpix-analyse = ">=2026.5.1"
 [feature.export.dependencies]
 rich-click = ">=1.9.7,<2"
 
-[feature.export.tasks.export-requirements]
+[feature.export.tasks.requirements]
 cmd = 'python export-environment.py requirements'
 default-environment = "export"
 cwd = "."
