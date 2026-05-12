@@ -1,0 +1,24 @@
+[workspace]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.13.*"
+healpix-geo = ">=0.1.2, <0.2"
+
+[pypi-dependencies]
+healpix-plot = ">=2026.5.1, <2027"
+healpix-resample = ">=2026.5.1, <2027"
+healpix-analyse = ">=2026.5.1, <2027"
+
+[feature.export.dependencies]
+jq = "*"
+
+[feature.export.tasks]
+export-requirements = { cmd = 'pixi ls -x -e default --frozen --json | jq -r ".[] | \"\\(.name)==\\(.version)\"" | grep -v python', default-environment = "export", cwd = "." }
+
+[environments]
+export = { features = ["export"], no-default-feature = true }
