@@ -38,7 +38,7 @@ jobs:
         run: |
           pixi run build-package
 
-      - name: save artifacts
+      - name: save artifacts (environment files)
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: release artifacts
@@ -47,7 +47,7 @@ jobs:
             requirements.txt
           if-no-files-found: error
 
-      - name: save artifacts
+      - name: save artifacts (packages)
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: built packages
