@@ -17,6 +17,9 @@ healpix-analyse = ">=2026.5.1"
 [feature.export.dependencies]
 rich-click = ">=1.9.7,<2"
 
+[feature.export.tasks]
+bump-dependencies = "python bump-dependencies.py"
+
 [feature.export.tasks.requirements]
 cmd = 'python export-environment.py requirements'
 default-environment = "export"
@@ -27,5 +30,12 @@ cmd = 'python export-environment.py conda-environment'
 default-environment = "export"
 cwd = "."
 
+[feature.packaging.dependencies]
+python-build = "*"
+
+[feature.packaging.tasks]
+build-package = "python -m build"
+
 [environments]
 export = { features = ["export"], no-default-feature = true }
+packaging = { features = ["packaging"], no-default-feature = true }
