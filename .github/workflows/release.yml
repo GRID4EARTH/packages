@@ -84,7 +84,7 @@ jobs:
   publish-to-pypi:
     needs: build
     name: Upload PyPI package
-    if: github.event_name == 'release'
+    # if: github.event_name == 'release'
 
     runs-on: ubuntu-latest
 
