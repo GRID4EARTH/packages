@@ -1,15 +1,14 @@
-[package]
+[project]
 name = "grid4earth"
 requires-python = ">= 3.11"
 license = "Apache-2.0"
-dynamic = ["version"]
-
 dependencies = [
   "healpix-geo==0.1.2",
   "healpix-plot==2026.5.1",
   "healpix-analyse==2026.5.1",
   "healpix-resample==2026.5.1",
 ]
+dynamic = ["version"]
 
 [build-system]
 requires = ["setuptools>=80.0", "setuptools-scm>=8"]
