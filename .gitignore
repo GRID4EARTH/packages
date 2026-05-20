@@ -1,5 +1,9 @@
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+
+# auto-generated files
 /requirements.txt
 /env.yml
+/dist/
+/grid4earth.egg-info/
