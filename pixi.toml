@@ -30,5 +30,12 @@ cmd = 'python export-environment.py conda-environment'
 default-environment = "export"
 cwd = "."
 
+[feature.packaging.dependencies]
+python-build = "*"
+
+[feature.packaging.tasks]
+build-package = "python -m build"
+
 [environments]
 export = { features = ["export"], no-default-feature = true }
+packaging = { features = ["packaging"], no-default-feature = true }
