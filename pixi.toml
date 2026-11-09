@@ -13,6 +13,7 @@ healpix-geo = ">=0.1.2"
 healpix-plot = ">=2026.5.1"
 healpix-resample = ">=2026.5.1"
 healpix-analyse = ">=2026.5.1"
+healpix-convert = ">=2026.11.1"
 
 [feature.export.dependencies]
 rich-click = ">=1.9.7,<2"
